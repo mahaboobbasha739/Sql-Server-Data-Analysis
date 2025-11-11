@@ -1,0 +1,147 @@
+
+	Agenda  -- 60 Mints
+
+				Introduction to MS Sql Server
+
+						Database Software
+						RDBMS Software
+						OLTP Software
+						Backend Development Software
+
+	Who will use the Sql Server Software ?
+	Who will Hire the Sql Server Developers ?
+
+	Any Company  --> Business  --> Business Data  --> Store Business Data  --> Sql Server  --> Sql Server Developers
+	Amazon		   Ecoom	       Data
+	ICICI			   Banking
+	Swiggy		   Food
+
+	Data
+	--------
+	Data is nothing but a Fact (or) Information which is Collected together and Stored in a Separate Place
+	for Future Analysis / Reporting Purpose
+
+	Ex:- Text , Number , Image , Audio , Video ,,,,,,,,,,,,,,,,
+
+	In Older Days  --> Record Books  --> It is not Possible to Store the Data for Longer Periods
+
+	In Later Days  --> Flat files Like (Excel, Google Sheets, CSV ,,,,,,,,,,,,,,,,)  --> It is njot Possible to Store the Huge Volumns of Data
+
+	Now a Days  --> Database Software Systems
+
+	Different types of Database Software Systems
+	--------------------------------------------------------------
+	1.DBMS	(Database Management Systems)
+
+	2.RDBMS	(Relational Database Management Systems)
+
+	1.DBMS	(Database Management Systems)
+	----------------------------------------------------------
+	DBMS is a Software which is used to Store the Data and also allows the Users to Define , Create , Maintain
+	and Controls the Access to the Databases.
+
+
+	In DBMS Softwares it is not Possible to Create the Relationships b/w the two tables
+
+
+	2.RDBMS	(Relational Database Management Systems)
+	-----------------------------------------------------------------------
+	RDBMS is a Software which is used to Store the Data and also allows the Users to Define , Create , Maintain
+	and Controls the Access to the Databases.
+
+
+	In RDBMS Softwares it is Possible to Create the Relationships b/w the two tables
+
+	MS Sql Server
+	Oracle
+	MySql
+	IBMDB2
+	PostgreSql ,,,,,,,,,,,,,,,
+
+									SQL
+									-----
+	SQL	(Structured Query Language)
+	---------------------------------------------
+	SQL is a Structured Query Language which is Specially Designed to Communicate with the RDBMS Software
+								(or)
+	SQL is an OLTP Software which is used to Store the Business Data / Transactional Data
+
+	OLTP  --> Online Transactional Processing
+
+	SQL  --> Developed  --> IBM  --> 1973  --> RDBMS Product
+
+								MS Sql Server
+								-------------------
+	SQL is a Structured Query Language which is Specially Designed to Communicate with the RDBMS Software
+								(or)
+	SQL is an OLTP Software which is used to Store the Business Data / Transactional Data
+
+	OLTP  --> Online Transactional Processing
+
+	MS Sql Server  --> Developed  --> Microsoft  --> 1989  --> RDBMS Product
+
+	Sql Server will acts as a Backend Development Software which is used to Store the Data in the form of Tables
+
+	MS Sql Server  --> ANSI Sql + T-Sql		(American National Standarded Institutes)
+
+	Sql Server is not a Programming Language
+
+	Sql Server will allows a Separate Language "Query Language"
+
+	Query
+	--------
+	Query is nothing but Retrieve / Fetch / get the Data from the Tables
+
+	Sql Server is a both GUI and CUI Software 
+	--------------------------------------------------------
+	GUI  --> Graphical User Interface  --> (With out Code)
+
+	CUI  --> Character User Interface  --> (With Code)
+
+								T-Sql
+								--------
+	T-Sql		(Trasact SQL)
+
+	T-SQL  --> Developed  --> Microsoft  --> 1989  --> OORDBMS Product
+
+	OORDBMS  --> Object Oriented RDBMS
+
+	It is a Programming Language
+
+	It is used to build the Complex Logics to get the Client Requriments
+	
+	Note
+	-------
+	Notepad
+	Word Document
+	Recorded Video
+	Course Content  --> 35 Days   (1 Hours)
+	Block Diagram
+
+
+	Registered
+	---------------
+	Notepad
+	Word Document
+	All Recorded Video
+	Tables
+	Queries
+
+	Interviews Q/A
+
+	2 Case Studies
+	-------------------
+	1 Case Study  --> 4 tables  --> 60 + Queries
+
+	2 Case Study  --> 12 tables  --> 20 + Queries
+
+	
+	New Batch  --> 29 Aug 2024   (Thursday)  --> Morning 7:00 - 8:00 AM (IST)
+
+
+	2 Classes Free  --> Same Link
+
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------
+			
+								Installation
+								------------------
