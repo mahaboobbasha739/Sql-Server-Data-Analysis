@@ -1,0 +1,219 @@
+						Operators
+						-----------------
+	1.Arithmetic Operators
+	2.Comparision Operators
+	3.Logical Operators
+	4.Set Operators
+	5.Special Operators
+
+	1.Arithmetic Operators
+	--------------------------------
+	1.Add  --> It is used to Add one Column values with another Column
+
+	2.Sub  --> It is used to get the Difference b/w two values
+
+	3.Mul  --> It is used to get the Product of two values
+
+	4.Div  --> It is used to Divide one value with another value
+
+	5.Modules  --> It is used to get the Remainder as an O/P
+
+	2.Comparision Operators
+	----------------------------------
+	1. =		Equals to
+
+	2. <>		Not Equals to
+
+	3. >		Greater than
+
+	4. <		Less than
+
+	5. >=		Greater than or Equals to
+
+	6. <=		Less than or Equals to
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE DATABASE OPERATORS
+
+USE OPERATORS
+
+CREATE TABLE PRODUCTS(PID INT,PNAME VARCHAR(20),QUANTITY INT,COST INT,SALES INT)
+
+INSERT INTO PRODUCTS VALUES(1,'MOBILES',4,300,500)
+INSERT INTO PRODUCTS VALUES(2,'LAPTOPS',5,500,600)
+INSERT INTO PRODUCTS VALUES(3,'MOUSES',2,150,200)
+
+SELECT * FROM PRODUCTS
+
+					-- ARITHMETIC OPERATORS
+
+-- WRITE A QUERY TO GET ADD THE COST+SALES
+SELECT PNAME AS PRODUCTS,COST,SALES,SALES+COST AS ADDITION FROM PRODUCTS
+
+-- WRITE A QUERY TO GET DIFFERENCE OF SALES-COST
+SELECT PNAME,SALES,COST,SALES-COST AS PROFIT FROM PRODUCTS
+
+-- WRITE A QUERY TO GET MUL OF QUANTITY*COST
+SELECT PNAME,QUANTITY,COST,QUANTITY*COST AS AMOUNT FROM PRODUCTS
+
+-- WRITE A QUERY TO GET TOTAL PROFITS FOR EACH PRODUCT
+SELECT PNAME,QUANTITY,SALES,COST,(SALES-COST)*QUANTITY AS TOTAL_pROFIT FROM PRODUCTS
+
+-- WRITE A QUERY TO GET SALES/COST
+SELECT PNAME,SALES,COST,SALES/COST AS DIVISION FROM PRODUCTS
+
+-- WRITE A QUERY TO GET SALES%COST
+SELECT PNAME,SALES,COST,SALES%COST AS MODULES FROM PRODUCTS
+
+
+				-- COMPARISON OPERATORS
+SELECT * FROM PRODUCTS
+-- WRITE A QUERY TO GET ALL THE PRODUCT DETAILS WHERE PRODUCT='MOBILE'
+SELECT * FROM PRODUCTS WHERE PNAME='MOBILES'
+
+-- WRITE A QUERY TO GET THE PRODUCT DETAILS WHERE PRODUCT<>'MOBILE'
+SELECT * FROM PRODUCTS WHERE PNAME<>'MOBILES'
+
+-- WRITE A QUERY TO GET THE PRODUCT DETAILS WHERE COST>300
+SELECT * FROM PRODUCTS WHERE COST>300
+
+-- WRITE A QUERY TO GET THE PRODUCT DETAILS WHERE COST<300
+SELECT * FROM PRODUCTS WHERE COST<300
+
+-- WRITE A QUERY TO GET THE PRODUCT DETAILS WHERE COST>=300
+SELECT * FROM PRODUCTS WHERE COST>=300
+
+-- WRITE A QUERY TO GET THE PRODUCT DETAILS WHERE COST<=350
+SELECT * FROM PRODUCTS WHERE COST<=350
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	3.Logical Operators
+	---------------------------
+	1.And
+	2.Or
+	3.Not
+
+	1.And
+	----------
+	If both the Conditions are True then only the O/P is True
+	If any one Condition is False then the O/P is also False
+
+	A	B	O/P
+	-------------------
+	0	0	0
+	1	0	0
+	0	1	0
+	1	1	1
+
+	2.Or
+	--------
+	If any one Condition is True then the O/P is also True
+	If both the Conditions are False the the O/P is also False
+
+	A	B	O/P
+	--------------------
+	0	0	0
+	1	0	1
+	0	1	1
+	1	1	1
+
+	3.Not
+	----------
+	If the I/P is True then the O/P is False
+	If the I/P is False then the O/P is True
+
+	A	O/P
+	--------------
+	1	0
+	0	1
+
+	4.Set Operators
+	-----------------------
+	1.Union		--> It is used to Combine the two tables Vertically , it will removes the Duplicate values b/w the two tables
+	2.Union All	--> It is used to Combine the two tables Vertically , it doesn't removes the Duplicate values b/w the two tables
+	3.Interset		--> It is used to get the Matching Records b/w the two tables
+	4.Except		--> It is used to get the Non-Matching from the Left Side Table
+
+	Rules
+	----------
+	1.The Structure of both the Tables has to be same
+	2.No.of Columns in both the tables has to be same
+	3.Position of the Columns in both the tables has to be same
+	4.Data type of the Columns in both the tables has to be same
+
+	----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+						-- LOGICAL OPERATORS
+
+CREATE TABLE EMP(ENO INT,ENAME VARCHAR(20),JOB VARCHAR(20),SALARY INT,DNO INT)
+
+INSERT INTO EMP VALUES(101,'WARNER','CLERK',12000,10)
+INSERT INTO EMP VALUES(102,'SMITH','SALES',14000,20)
+INSERT INTO EMP VALUES(103,'SCOOT','DEV',16000,30)
+INSERT INTO EMP VALUES(104,'FINCH','ADMIN',18000,10)
+INSERT INTO EMP VALUES(105,'STARCH','DEV',20000,20)
+
+SELECT * FROM EMP
+
+-- WRITE A QUERY TO GET EMP DETAILS WHERE JOB='CLERK' AND DNO=10
+SELECT * FROM EMP WHERE DNO=10 AND JOB='CLERK'
+
+-- WRITE A QUERY TO GET EMP DETAILS WHERE JOB='SALES' AND DNO=10
+SELECT * FROM EMP WHERE DNO=10 AND JOB='SALES'
+
+-- WRITE A QUERY TO GET EMP DETAILS WHERE JOB='CLERK' OR DNO=10
+SELECT * FROM EMP WHERE DNO=10 OR JOB='CLERK'
+
+-- WRITE A QUERY TO GET EMP DETAILS WHERE JOB='HR' OR DNO=30
+SELECT * FROM EMP WHERE DNO=30 OR JOB='HR'
+
+-- WRITE A QUERY TO GET EMP DETAILS WHERE JOB='HR' OR DNO=40
+SELECT * FROM EMP WHERE DNO=40 OR JOB='HR'
+
+-- WRITE A QUERY TO GET EMP DETAILS WHERE DNO NOT=10
+SELECT * FROM EMP WHERE NOT DNO=10
+
+SELECT * FROM EMP WHERE DNO<>10
+
+					-- SET OPERATORS
+
+CREATE TABLE EMP1(ENO INT,ENAME VARCHAR(20),SALARY INT)
+
+INSERT INTO EMP1 VALUES(101,'WARNER',12000)
+INSERT INTO EMP1 VALUES(102,'SMITH',14000)
+INSERT INTO EMP1 VALUES(103,'SCOOT',16000)
+INSERT INTO EMP1 VALUES(104,'FINCH',18000)
+
+SELECT * FROM EMP1
+
+CREATE TABLE EMP2(ENO INT,ENAME VARCHAR(20),SALARY INT)
+
+INSERT INTO EMP2 VALUES(105,'STARCH',20000)
+INSERT INTO EMP2 VALUES(106,'MAXWELL',21000)
+INSERT INTO EMP2 VALUES(107,'ABD',22000)
+INSERT INTO EMP2 VALUES(101,'WARNER',12000)
+
+SELECT * FROM EMP1
+SELECT * FROM EMP2
+
+-- UNION
+SELECT * FROM EMP1
+UNION
+SELECT * FROM EMP2
+
+-- UNION ALL
+SELECT * FROM EMP1
+UNION ALL
+SELECT * FROM EMP2
+
+-- INTERSECT
+SELECT * FROM EMP1
+INTERSECT
+SELECT * FROM EMP2
+
+-- EXCEPT
+SELECT * FROM EMP1
+EXCEPT
+SELECT * FROM EMP2

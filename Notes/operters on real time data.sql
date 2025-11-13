@@ -1,0 +1,43 @@
+CREATE TABLE EmployeePerformance (
+       EMPID INT,
+       NAME NVARCHAR(26),
+       DEPARTMENT NVARCHAR(35),
+       SALARY DECIMAL(10,2),
+       BONOUS DECIMAL(10,2),
+       YEARSEXPERIENCE INT,
+       ISACTIVE BIT
+);
+
+INSERT INTO EmployeePerformance VALUES
+(101, 'Amit', 'Sales', 55000, 5000, 5, 1),
+(102, 'Priya', 'HR', 48000, 3000, 3, 1),
+(103, 'Raj', 'IT', 62000, 7000, 7, 0),
+(104, 'Sneha', 'Finance', 58000, 4000, 4, 1),
+(105, 'Kiran', 'IT', 60000, 6000, 6, 1),
+(106, 'Divya', 'Sales', 53000, 3500, 2, 0);
+
+SELECT * FROM EmployeePerformance
+
+-- CALUCULATE TOTAL COMPENSATION OF EMPLOYEE
+SELECT * FROM EmployeePerformance
+SELECT NAME AS EMPNAME,SALARY+BONOUS AS TOTALCOMPENSATION FROM EmployeePerformance
+--CALUCULATE AVG MONTHLY SALARAY OF EMPLOYEE
+SELECT * FROM EmployeePerformance
+SELECT NAME,SALARY/12 AS MONTHLYSALARY  FROM EmployeePerformance
+SELECT * FROM EmployeePerformance
+SELECT NAME,YEARSEXPERIENCE, SALARY, BONOUS, BONOUS / YEARSEXPERIENCE AS BOUNOUSPERYEAR FROM EmployeePerformance
+---LOGICAL OPERATIONS
+---- Active Employees with High Salary
+SELECT * FROM EmployeePerformance
+WHERE ISACTIVE=1 AND SALARY>55000
+-- Employees in IT or Finance
+SELECT * FROM EmployeePerformance
+WHERE DEPARTMENT IN ('IT', 'FINANCE')
+
+--Employees with Bonus between 4000 and 6000
+SELECT * FROM EmployeePerformance
+WHERE BONOUS BETWEEN 4000 AND 6000
+--EMPLOYEES NOT IN SALES 
+SELECT * FROM EmployeePerformance
+SELECT * FROM EmployeePerformance
+WHERE NOT DEPARTMENT ='SALES'

@@ -1,0 +1,16 @@
+SELECT attribute-list
+   FROM table-name
+   WHERE condition
+attribute-list
+This is usually a comma separated list of attributes (field names)
+Expressions involving these attributes may be used. The normal mathematical operators +, -, *, / may be used on numeric values. String values may be concatenated using ||
+To select all attributes use *
+The attributes in this case are: name, region, area, population and gdp
+table-name
+In these examples the table is always bbc.
+condition
+This is a boolean expression which each row must satisfy.
+Operators which may be used include AND, OR, NOT, >, >=, =, <, <=
+The LIKE operator permits strings to be compared using 'wild cards'. The symbols _ and % are used to represent a single character or a sequence of characters. Note that MS Access SQL uses ? and * instead of _ and % .
+The IN operator allows an item to be tested against a list of values.
+There is a BETWEEN operator for checking ranges.
