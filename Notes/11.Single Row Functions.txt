@@ -1,0 +1,34 @@
+							Functions
+							--------------
+	Types of Functions
+	---------------------------
+		1.System Defined Functions
+
+		2.User Defined Functions
+
+	1.System Defined Functions
+	--------------------------------------
+	System Defined Functions are Created / Defined by the MS Sql Server  (Default)
+	It is not Possible to Modify the System Defined Functions
+
+
+	2.User Defined Functions
+	----------------------------------
+	User Defined Functions are Created / Defined by the Users / Dev
+	It is Possible to Modify the User Defined Functions
+
+	1.System Defined Functions
+	--------------------------------------
+		1.Single Row Functions
+
+		2.Column / Group / Aggregate Functions
+
+	1.Single Row Functions
+	--------------------------------
+	These Functions will gives one Value as an O/P for Each and Every Row in a Table
+	These Functions will Excuite based on the Rows in a Table
+
+	1.Char / String Functions		--> Char / String Data Type Values
+	2.Number Functions			--> Numerical Values
+	3.Date and Time Functions	--> Date / Time Values
+	4.Convertion Functions
