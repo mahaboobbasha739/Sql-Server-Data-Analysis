@@ -1,0 +1,205 @@
+							Functions
+							--------------
+	Types of Functions
+	---------------------------
+		1.System Defined Functions
+
+		2.User Defined Functions
+
+	1.System Defined Functions
+	--------------------------------------
+	System Defined Functions are Created / Defined by the MS Sql Server  (Default)
+	It is not Possible to Modify the System Defined Functions
+
+
+	2.User Defined Functions
+	----------------------------------
+	User Defined Functions are Created / Defined by the Users / Dev
+	It is Possible to Modify the User Defined Functions
+
+	1.System Defined Functions
+	--------------------------------------
+		1.Single Row Functions
+
+		2.Column / Group / Aggregate Functions
+
+	1.Single Row Functions
+	--------------------------------
+	These Functions will gives one Value as an O/P for Each and Every Row in a Table
+	These Functions will Excuite based on the Rows in a Table
+
+	1.Char / String Functions		--> Char / String Data Type Values
+	2.Number Functions			--> Numerical Values
+	3.Date and Time Functions	--> Date / Time Values
+	4.Convertion Functions
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+	2.Column / Group / Aggregate Functions
+	-----------------------------------------------------
+	These Functions are used to get the Aggregated Data as O/P based on the Values under the Columns in a Table
+	These Functions will Excuite based on the Columns in a Table
+
+	Types of Aggregate Functions
+	----------------------------------------
+	1.Max()  --> It is use to get the Max under the Column in a Table
+
+	2.Min()  --> It is used to get the Min Value under the Column in a Table
+
+	3.Sum()  --> It is used to get the Sum of Values under the column in a Table
+
+	4.Avg()  --> it is used to get the Avg Value under the Column in a Table
+
+	5.Count()  --> It is used to get the Count Values under the Columns in a Table  (No.of Rows in a Table)
+
+
+	Special Clauses
+	--------------------
+	1.Group BY
+	2.Having
+	3.Order BY
+	4.Distinct
+	5.Rollup
+	6.Cube
+
+	1.Group BY
+	----------------
+	It is used to get the Aggregated Data as an O/P for a Group of Similar Records under the Column
+	to Work with the Group BY we need to have the "Aggregate Functions"
+
+------------------------------------------------------------------------------------
+
+
+				-- AGGREGATE FUNCTIONS
+
+SELECT * FROM EMP
+
+-- WRITE A QUERY TO GET THE MAX SAL FROM THE EMP TABLE
+SELECT MAX(ESALARY) AS MAXSAL FROM EMP
+
+-- WRITE A QUERY TO GET THE MIN SAL FROM THE EMP TABLE
+SELECT MIN(ESALARY) AS MINSAL FROM EMP
+
+-- WRITE A QUERY TO GET THE TOTAL SUM OF SAL FROM THE EMP TABLE
+SELECT SUM(ESALARY) AS SUMOFSAL FROM EMP
+
+-- WRITE A QUERY TO GET THE AVG SAL FROM THE EMP TABLE
+SELECT AVG(ESALARY) AS AVGSAL FROM EMP
+
+-- WRITE A QUERY TO GET THE COUNT OF VALUES UNDER THE SALARY COLUMN FROM THE EMP TABLE
+SELECT COUNT(ESALARY) AS COUNTS FROM EMP
+
+SELECT COUNT(*) AS COUNTS FROM EMP
+
+SELECT * FROM EMP
+
+UPDATE EMP SET ESALARY=25000 WHERE ESALARY IS NULL
+
+				-- GROUP BY
+
+-- WRITE A QUERY TO GET DNO WISE MAX SALARY FROM EMP TABLE
+SELECT DNO,MAX(ESALARY) AS MAXSAL FROM EMP GROUP BY DNO
+
+-- WRITE A QUERY TO GET DNO WISE MIN SALARY FROM EMP TABLE
+SELECT DNO,MIN(ESALARY) AS MINSAL FROM EMP GROUP BY DNO
+
+-- WRITE A QUERY TO GET DNO WISE SUM OF SALARY FROM EMP TABLE
+SELECT DNO,SUM(ESALARY) AS SUMOFSAL FROM EMP GROUP BY DNO	
+
+-- WRITE A QUERY TO GET JOB WISE MAX SALARY FROM EMP TABLE
+SELECT JOB,MAX(ESALARY) AS MAXSAL FROM EMP GROUP BY JOB
+
+-- WRITE A QUERY TO GET DNO WISE COUNT OF EMPS FROM EMP TABLE
+SELECT DNO,COUNT(*) AS COUNTS FROM EMP GROUP BY DNO
+
+-- WRITE A QUERY TO GET JOB WISE COUNT OF EMPS FROM EMP TABLE
+SELECT JOB,COUNT(*) AS COUNTS FROM EMP GROUP BY JOB
+
+-- WRITE A QUERY TO GET DNO WISE SUM OF SALARY AND COUNT OF EMPS FROM EMP TABLE
+SELECT DNO,SUM(ESALARY) AS SUMOFSAL,COUNT(*) AS COUNTS,MAX(ESALARY) AS MAXSAL FROM EMP GROUP BY DNO
+
+
+SELECT AVG(ESALARY) AS COUNTS,SUM(ESALARY) AS SUMOFSAL FROM EMP WHERE ENUM IN(101,102)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	2.Having
+	3.Order BY
+	4.Distinct
+	5.Rollup
+	6.Cube
+
+	2.Having
+	---------------
+	Having is used to Filter the Aggregated Resultant O/P
+	To work with the Having Clause we need to have the "Group By"
+
+	Where  --> It is used to Filter the Data on the Base Tables
+
+	3.Order BY
+	----------------
+	It is used to Sort / Rearrange the Data in the Table either in Asc / Desc Order based on the Values under the Columns
+
+	4.Distinct
+	--------------
+	It is used to get the Unique values under the Columns
+
+	5.Rollup
+	---------------
+	It is used to get the Sub-Totals and Grant Totals based on the Single Column
+
+	6.Cube
+	-------------
+	It is used to get the Sub-Totals and Grant Totals based on the Multiple Columns
+
+--------------------------------------------------------------------------------------------------------------------------
+
+						-- HAVING
+SELECT * FROM EMP
+
+-- WRITE A QUERY TO GET THE DNO WISE MAX SALARY WHERE DNO WISE MAX SALARY > 40000
+SELECT DNO,MAX(ESALARY) AS MAXSAL FROM EMP GROUP BY DNO HAVING MAX(ESALARY)>40000
+
+-- WRITE A QUERY TO GET THE DNO WISE MIN SALARY WHERE DNO WISE MIN SALARY > 10000
+SELECT DNO,MIN(ESALARY) AS MINSAL FROM EMP GROUP BY DNO HAVING MIN(ESALARY)>10000
+
+-- WRITE A QUERY TO GET THE DNO WISE COUNT OF EMP WHERE COUNT OF EMP > 3
+SELECT DNO,COUNT(*) AS COUNTS FROM EMP GROUP BY DNO HAVING COUNT(*)>3
+
+					-- ORDER BY
+
+-- WRITE A QUERY TO GET THE EMP DETAILS IN ASC ORDERS BASED ON THE SALARY COLUMN
+SELECT * FROM EMP ORDER BY ESALARY ASC
+
+-- WRITE A QUERY TO GET THE EMP DETAILS IN DESC ORDERS BASED ON THE SALARY COLUMN
+SELECT * FROM EMP ORDER BY ESALARY DESC
+
+		-- DISTINCT CLAUSE
+
+-- WRITE A QUERY TO GET THE UNIQUE DNO NUMBERS FROM THE DNO COLUMN IN EMP TABLE
+SELECT DISTINCT(DNO) FROM EMP
+
+-- WRITE A QUERY TO GET COUNT OF UNIQUE DNO NUMBERS FROM THE DNO COLUMN IN EMP TABLE
+SELECT COUNT(DISTINCT(DNO)) FROM EMP
+
+			-- WITH ROLLUP CLAUSE
+
+-- WRITE A QUERY TO GET DNO WISE SUM OF SAL AND ALSO THE GRAND TOTAL SAL
+SELECT DNO,SUM(ESALARY) AS SUMOFSAL FROM EMP GROUP BY DNO WITH ROLLUP
+
+-- WRITE A QUERY TO GET DNO WISE MAX SAL AND ALSO THE GRAND MAX SAL
+SELECT DNO,MAX(ESALARY) AS MAXSAL FROM EMP GROUP BY DNO WITH ROLLUP
+
+-- WRITE A QUERY TO GET DNO WISE COUNT OF EMPS AND ALSO THE GRAND TOTALS
+SELECT DNO,COUNT(*) AS COUNTS FROM EMP GROUP BY DNO WITH ROLLUP
+
+-- WRITE A QUERY TO GET JOB WISE COUNT OF EMPS AND ALSO THE GRAND TOTALS
+SELECT JOB,COUNT(*) AS COUNTS FROM EMP GROUP BY JOB WITH ROLLUP
+
+-- WRITE A QUERY TO GET DNO,JOB WISE COUNT OF EMPS AND ALSO THE GRAND TOTALS
+SELECT DNO,JOB,COUNT(*) AS COUNTS FROM EMP GROUP BY DNO,JOB WITH ROLLUP
+
+			-- CUBE CLAUSE
+
+-- WRITE A QUERY TO GET DNO,JOB WISE COUNT OF EMPS AND ALSO THE GRAND TOTALS
+SELECT DNO,JOB,COUNT(*) AS COUNTS FROM EMP GROUP BY CUBE (JOB,DNO)

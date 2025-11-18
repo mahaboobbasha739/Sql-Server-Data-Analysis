@@ -1,0 +1,55 @@
+					Top N Clause
+					-----------------
+ 	Top N Clause is used to Fetch the Top N Records From the Table.
+
+
+				Fetch
+				------
+	Fetch is used to Retrive the Particular Records from the Table
+
+	Order By is **(Mandatory)
+
+				Offset
+				---------
+	Offset Clause is used to limit the number of rows to be returned by a query.
+	
+	--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SELECT * FROM EMP ORDER BY ESALARY DESC
+
+						-- TOP N CLAUSE
+
+-- WRITE A QUERY TO GET THE TOP 2 EMP DETAILS FROM THE EMP TABLE
+SELECT TOP 2 * FROM EMP
+
+-- WRITE A QUERY TO GET THE TOP 2 EMP DETAILS FROM THE EMP TABLE BASED ON THE SALARY COLUMNS
+SELECT TOP 2 * FROM EMP ORDER BY ESALARY DESC
+
+-- WRITE A QUERY TO GET THE TOP 2 EMP FROM THE DNO=10
+SELECT TOP 2 * FROM EMP WHERE DNO=10
+
+SELECT TOP 2 * FROM EMP WHERE DNO=30 ORDER BY ESALARY DESC
+
+---------------------------------------------------------------------------
+
+						-- OFFSET
+SELECT * FROM EMP ORDER BY ESALARY DESC OFFSET 2 ROWS
+
+						-- FETCH
+SELECT * FROM EMP ORDER BY ESALARY DESC OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY
+
+---------------------------------------------------------------------------------
+
+SELECT * FROM EMP
+
+						-- EVEN NUMBER OF ROWS
+SELECT * FROM EMP WHERE ENUM%2=0
+
+						-- ODD NUMBER OF ROWS
+SELECT * FROM EMP WHERE ENUM%2=1
+
+
+
+
+
