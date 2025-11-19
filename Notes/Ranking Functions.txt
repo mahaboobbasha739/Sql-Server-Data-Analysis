@@ -1,0 +1,56 @@
+						Ranking Functions
+						-------------------------
+	These Functions are used to give the Ranks for Each an Every Row (or) for a Group of Rows based on the values under the Columns
+
+	To work with the Ranking Functions we Need to have the "Order By" , "Over" , "Partition By"
+
+	Order By		--> Mandatory
+	Over			--> Mandatory
+
+	Partition By  --> Optional
+
+	Types of Ranking Functions
+	------------------------------------
+	1.Row_Number()  --> It will gives one Unique value for all the Rows in a Table , It doesn't Consider the values under the Columns
+
+	2.Rank()  --> It will Creates the Gaps b/w the Ranks , If the values are Repeated Under the Columns
+
+	3.Dense_Rank()  --> It will gives the Perfect Ranks based on the values under the Columns
+
+	Esalary	   Row_Number()	   Rank()		Dense_Rank()
+	---------------------------------------------------------------------------------
+	10000	-->    1			-->  1	     -->   1
+
+	20000	-->    2			-->  2	     -->   2
+
+	20000	-->    3			-->  2 	     -->   2
+
+	30000	-->    4			-->  4	     -->   3
+
+	40000	-->    5			-->  5	     -->   4
+
+	50000	-->    6			-->  6	     -->   5
+
+	50000	-->    7			-->  6	     -->   5
+
+	50000	-->    8			-->  6	     -->   5
+
+	60000	-->    9			-->  9	     -->   6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
