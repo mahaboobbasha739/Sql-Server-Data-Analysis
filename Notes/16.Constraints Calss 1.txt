@@ -1,0 +1,94 @@
+							Constraints
+								----------------
+	Constraints are used to Define the Rules / Conditions on the Columns in a Table
+
+	Types of Constarints
+	----------------------------
+	1.Domain
+	2.Entity
+	3.Referentrial
+
+	1.Domain
+	--------------
+	1.Identity (1,1)  --> It will Automatically gives one unique value when ever we Insert one New Row into the table
+	2.Check  --> It is used to Check the Values under the Columns based on the Condition
+	3.Not Null  --> It doesn't allows the Null Values into the Columns
+	4.Default  --> it is used to Pass the Default Values into the ColumNS
+
+	2.Entity
+	------------
+	1.Primary Key  --> It Doesn't allows the Duplicate values , Null Values into the Columns	***(Only one P.K for one Table)
+	2.Unique  --> It Doesn't allows the Duplicate values , but it allows one Null into the Columns   ***(No.of Unique for a table)
+	3.Composite Key  --> Assigning the P.K Combindelly for Multiple Columns is Known as "Composite Key"
+
+---------------------------------------------------------------------------------------------------------------------------
+
+CREATE DATABASE CONSTRAINTS
+
+USE CONSTRAINTS
+
+CREATE TABLE EMP(ENO INT NOT NULL,ENAME VARCHAR(20) NOT NULL,
+				SALARY INT CHECK(SALARY>=10000),ADDRESS VARCHAR(20) DEFAULT 'NA')
+
+INSERT INTO EMP VALUES(101,'WARNER',12000,'HYD')
+INSERT INTO EMP VALUES(102,'SMITH',14000,'BANG')
+INSERT INTO EMP VALUES(103,'SCOOT',16000,'PUNE')
+
+SELECT * FROM EMP
+
+-- NOT NULL
+INSERT INTO EMP(ENAME,SALARY,ADDRESS) VALUES('FINCH',18000,'HYD')  -- NOT ALLOWED
+
+-- CHECK
+INSERT INTO EMP VALUES(104,'FINCH',8000,'HYD')  -- NOT ALLOWED
+
+-- DEFAULT
+INSERT INTO EMP(ENO,ENAME,SALARY) VALUES(104,'FINCH',18000)
+
+					-- IDENTITY
+
+CREATE TABLE EMP1(ENO INT IDENTITY(1,1),ENAME VARCHAR(20))
+
+INSERT INTO EMP1 VALUES('WARNER'),('SMITH'),('SCOOT')
+INSERT INTO EMP1 VALUES('FINCH')
+
+SELECT * FROM EMP1
+
+						-- PRIMARY KEY
+
+CREATE TABLE EMP3(ENO INT PRIMARY KEY,ENAME VARCHAR(20),SALARY INT,DNO INT)
+
+INSERT INTO EMP3 VALUES(101,'WARNER',12000,10)
+INSERT INTO EMP3 VALUES(102,'SMITH',14000,20)
+INSERT INTO EMP3 VALUES(103,'SCOOT',1600,30)
+
+SELECT * FROM EMP3
+
+INSERT INTO EMP3 VALUES(102,'FINCH',18000,10)  -- NOT ALLOWED
+
+INSERT INTO EMP3(ENAME,SALARY,DNO) VALUES('FINCH',18000,10)  -- NOT ALLOWED
+
+CREATE TABLE EMP4(ENO INT PRIMARY KEY,ENAME VARCHAR(20),SALARY INT PRIMARY KEY,DNO INT)
+
+						-- COMPOSITE KEY
+
+CREATE TABLE EMP5(ENO INT,ENAME VARCHAR(20),SALARY INT PRIMARY KEY(ENO,SALARY),DNO INT)
+
+						-- UNIQUE
+
+CREATE TABLE EMP6(ENO INT UNIQUE,ENAME VARCHAR(20),SALARY INT,DNO INT)
+
+INSERT INTO EMP6 VALUES(101,'WARNER',12000,10)
+INSERT INTO EMP6 VALUES(102,'SMITH',14000,20)
+INSERT INTO EMP6 VALUES(103,'SCOOT',1600,30)
+
+SELECT * FROM EMP6
+
+INSERT INTO EMP6 VALUES(102,'FINCH',18000,10)  -- NOT ALLOWED
+
+INSERT INTO EMP6(ENAME,SALARY,DNO) VALUES('FINCH',18000,10)
+
+INSERT INTO EMP6(ENAME,SALARY,DNO) VALUES('STARCH',18000,10)
+
+CREATE TABLE EMP7(ENO INT UNIQUE,ENAME VARCHAR(20) UNIQUE,SALARY INT UNIQUE,DNO INT UNIQUE)
+
