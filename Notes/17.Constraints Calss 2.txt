@@ -1,0 +1,7 @@
+	3.Referentrial
+	--------------------
+	1.Foreign Key   --> It is used to Create the Relationships b/w the two tables
+				--> We need to have the Primary Key / Unique to Create the Relationships
+				--> We need to have the Common Column b/w the two Tables
+
+	2.Self Referential Key  --> Creating the Relationships b/w the two Common Columns with in the same table
