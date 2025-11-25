@@ -1,0 +1,122 @@
+						Indexes
+						------------
+	Indexes are used to Retrieve / get the Data from the tables very quickly
+	Indexes are used to Improve the Performance of the Queries
+
+	The Default Search Process is "Sequential Search"
+
+	Select * from Emp where Esalary Between 20000 and 40000
+
+	Types of Indexes
+	-----------------------
+	1.Clustered Index
+	2.Non-Clustered Index
+	3.Unique Index
+	4.Composite Index
+
+	1.Clustered Index
+	-------------------------
+	Clustered Index are used to Rearrange the Data in the Table either in Asc / Desc
+	Only one Clustered Index for one table
+	P.K will Automatically creates an Clustered Indes
+	Both the Index and Data is Stored at one Place
+
+	4.Composite Index
+	--------------------------
+	Creating the Clustered Index Combindelly for Multiple Columns is known as "Composite Index"
+
+	2.Non-Clustered Index
+	-------------------------------
+	In Non-Clustered Indexes the Data is Stored at one Palce and the Index is Stored at another Place
+	The Non-Clustered Indexes will have the Pointer to Store the Location of Dats
+	We can Create multiple Non-Clustered Indexes for Multiple Columns in a table because the Data is Stored at one Palce and the Index is Stored at another Place
+	
+	3.Unique Index
+	--------------------
+	Unique Constarint  --> Unique Non-Clustered Index
+	If the Column doesn't contains the Duplicate values on those Columns only we are able to Create the Unique Index
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+CREATE DATABASE INDEXESS
+
+USE INDEXESS
+
+CREATE TABLE EMP(ENO INT,ENAME VARCHAR(20),SALASRY INT,DNO INT)
+
+INSERT INTO EMP VALUES(2,'WARNER',12000,10)
+INSERT INTO EMP VALUES(4,'SMITH',14000,20)
+INSERT INTO EMP VALUES(1,'SCOOT',16000,30)
+INSERT INTO EMP VALUES(5,'FINCH',18000,10)
+INSERT INTO EMP VALUES(3,'STARCH',20000,20)
+
+SELECT * FROM EMP
+
+				-- CLUSTERED INDEX
+CREATE CLUSTERED INDEX CLUS_EMP_ENO ON EMP(ENO)
+
+CREATE CLUSTERED INDEX CLUS_EMP_SALARY ON EMP(SALASRY)
+
+DROP INDEX EMP.CLUS_EMP_ENO
+
+
+CREATE TABLE EMP1(ENO INT PRIMARY KEY,ENAME VARCHAR(20),SALARY INT,DNO INT)
+
+INSERT INTO EMP1 VALUES(2,'WARNER',12000,10)
+INSERT INTO EMP1 VALUES(4,'SMITH',14000,20)
+INSERT INTO EMP1 VALUES(1,'SCOOT',16000,30)
+INSERT INTO EMP1 VALUES(5,'FINCH',18000,10)
+INSERT INTO EMP1 VALUES(3,'STARCH',20000,20)
+
+SELECT * FROM EMP1
+
+DROP INDEX EMP1.PK__EMP1__C190FFA91E973B3F
+
+
+SP_HELP EMP
+
+SP_HELPINDEX EMP
+
+					--COMPOSITE INDEX
+CREATE CLUSTERED INDEX CLUS_EMP_ENO_SAL ON EMP(ENO,SALASRY)
+
+					-- NON-CLUSTERED INDEX
+CREATE NONCLUSTERED INDEX NONCLUS_EMP_DNO ON EMP(DNO)
+
+CREATE NONCLUSTERED INDEX NONCLUS_EMP_ENAME ON EMP(ENAME)
+
+					-- UNIQUE INDEX
+CREATE TABLE STUDENTS(SID INT,SNAME VARCHAR(20),MARKS INT)
+
+INSERT INTO STUDENTS VALUES(1,'WARNER',510)
+INSERT INTO STUDENTS VALUES(2,'SMITH',550)
+INSERT INTO STUDENTS VALUES(3,'SCOOT',450)
+INSERT INTO STUDENTS VALUES(2,'FINCH',410)
+
+SELECT * FROM STUDENTS
+
+CREATE UNIQUE INDEX UNIQ_STUDENTS_SID ON STUDENTS(SID)
+
+CREATE UNIQUE INDEX UNIQ_STUDENTS_SNAME ON STUDENTS(SNAME)
+
+CREATE TABLE STUDENTS1(SID INT UNIQUE,SNAME VARCHAR(20),MARKS INT)
+
+INSERT INTO STUDENTS1 VALUES(1,'WARNER',510)
+INSERT INTO STUDENTS1 VALUES(2,'SMITH',550)
+INSERT INTO STUDENTS1 VALUES(3,'SCOOT',450)
+
+
+SELECT * FROM STUDENTS
+
+SP_HELP STUDENTS1
+
+
+
+
+
+
+
+
+
+
+
